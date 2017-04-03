@@ -1,0 +1,3 @@
+sudo nano /usr/local/bin/firewall.sh
+
+     iptables -A INPUT -p tcp –dport 993 -j ACCEPT
