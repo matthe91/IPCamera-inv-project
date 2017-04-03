@@ -1,0 +1,8 @@
+cd /etc/stunnel/
+sudo openssl genrsa -out localhost.key 4096
+sudo openssl req -new -key localhost.key -out localhost.csr
+sudo openssl x509 -req -days 365 -in localhost.csr -signkey localhost.key -out localhost.crt
+sudo bash
+cat localhost.key > localhost.pem && cat localhost.crt >> localhost.pem
+chmod 400 /etc/stunnel/localhost.pem
+exit
